@@ -2,6 +2,7 @@
 Vanilla Forums Steam Sign-in Plugin (fork of [daigo75](https://github.com/daigo75) aeliasteamsignin-plugin).
 
 This plugin is only tested with Vanilla Forums `2.2.1`.
+Vanilla Forums plugin post can be found [here](https://vanillaforums.org/addon/galexsteamsignin-plugin).
 
 # Installation
 ## Requirements
