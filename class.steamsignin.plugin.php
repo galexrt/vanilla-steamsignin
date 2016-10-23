@@ -19,8 +19,7 @@ $PluginInfo['steamsignin'] = array(
     'RequiredApplications' => array(
         'Vanilla' => '2.1'
     ),
-#    'RequiredPlugins' => array('OpenID' => '0.1a'),
-    'RequiredPlugins' => array(),
+    'RequiredPlugins' => array('OpenID' => '0.1a'),
     'RequiredTheme' => false,
     'MobileFriendly' => true,
     'SettingsUrl' => '/dashboard/plugin/steamsignin',
@@ -85,7 +84,7 @@ class steamsigninPlugin extends Gdn_Plugin
         )), $SigninURL, 'PopupWindow', array(
             'popupHref' => $PopupSigninURL,
             'popupWidth' => 800,
-            'popupHeight' => 500,
+            'popupHeight' => 550,
             'id' => 'SteamSignIn',
             'title' => $ButtonTitle
         ));
