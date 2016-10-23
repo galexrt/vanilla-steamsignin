@@ -28,7 +28,8 @@ $PluginInfo['steamsignin'] = array(
     'RegisterPermissions' => false,
     'Author' => 'Diego Zanella',
     'AuthorEmail' => 'diego@pathtoenlightenment.net',
-    'AuthorUrl' => 'http://pathtoenlightenment.net'
+    'AuthorUrl' => 'http://pathtoenlightenment.net',
+    'License' => 'GPLv3',
 );
 
 /**
