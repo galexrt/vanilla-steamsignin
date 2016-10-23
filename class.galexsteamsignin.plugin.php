@@ -13,7 +13,7 @@ GPL3: http://www.gnu.org/licenses/gpl-3.0.txt
 */
 
 // Define the plugin:
-$PluginInfo['steamsignin'] = array(
+$PluginInfo['galexsteamsignin'] = array(
     'Name' => 'Steam Sign In',
     'Description' => 'Allows users to sign in with their Steam accounts. <strong>Please click Settings, after enabling the plugin, to enable displaying the "Sign in through Steam" button</b>.',
     'Version' => '14.01.19',
@@ -23,7 +23,7 @@ $PluginInfo['steamsignin'] = array(
     'RequiredPlugins' => array('OpenID' => '0.1a'),
     'RequiredTheme' => false,
     'MobileFriendly' => true,
-    'SettingsUrl' => '/dashboard/plugin/steamsignin',
+    'SettingsUrl' => '/dashboard/plugin/galexsteamsignin',
     'SettingsPermission' => 'Garden.Settings.Manage',
     'RegisterPermissions' => false,
     'Author' => 'Diego Zanella',
@@ -35,10 +35,10 @@ $PluginInfo['steamsignin'] = array(
 /**
  * Allows users to sign in with their Steam accounts.
  */
-class steamsigninPlugin extends Gdn_Plugin
+class galexsteamsigninPlugin extends Gdn_Plugin
 {
-    const STEAM_ICON_IMG = 'plugins/steamsignin/design/images/steam-icon.png';
-    const STEAM_SIGNIN_IMG = 'plugins/steamsignin/design/images/steam-signin.png';
+    const STEAM_ICON_IMG = 'plugins/galexsteamsignin/design/images/steam-icon.png';
+    const STEAM_SIGNIN_IMG = 'plugins/galexsteamsignin/design/images/steam-signin.png';
 
     /**
      * Builds the URL that will be used to authorise User to log in.
@@ -102,7 +102,7 @@ class steamsigninPlugin extends Gdn_Plugin
         $Sender->Permission('Garden.Settings.Manage');
         
         $Sender->Title($this->GetPluginKey('Name'));
-        $Sender->AddSideMenu('dashboard/plugin/steamsignin');
+        $Sender->AddSideMenu('dashboard/plugin/galexsteamsignin');
         
         $this->Dispatch($Sender, $Sender->RequestArgs);
     }
@@ -118,7 +118,7 @@ class steamsigninPlugin extends Gdn_Plugin
     public function base_getAppSettingsMenuItems_handler($Sender)
     {
         $Menu =& $Sender->EventArguments['SideMenu'];
-        $Menu->addLink('Users', 'Steam Sign-In', 'dashboard/plugin/steamsignin', 'Garden.Settings.Manage');
+        $Menu->addLink('Users', 'Steam Sign-In', 'dashboard/plugin/galexsteamsignin', 'Garden.Settings.Manage');
     }
     
     /**
@@ -153,12 +153,12 @@ class steamsigninPlugin extends Gdn_Plugin
     public function AuthenticationController_Render_Before($Sender)
     {
         if (isset($Sender->ChooserList)) {
-            $Sender->ChooserList['steamsignin'] = 'Steam';
+            $Sender->ChooserList['galexsteamsignin'] = 'Steam';
         }
         
         if (is_array($Sender->Data('AuthenticationConfigureList'))) {
             $List = $Sender->Data('AuthenticationConfigureList');
-            $List['steamsignin'] = '/dashboard/plugin/steamsignin';
+            $List['galexsteamsignin'] = '/dashboard/plugin/galexsteamsignin';
             $Sender->SetData('AuthenticationConfigureList', $List);
         }
     }
