@@ -16,7 +16,7 @@ GPL3: http://www.gnu.org/licenses/gpl-3.0.txt
 $PluginInfo['galexsteamsignin'] = array(
     'Name' => 'Steam Sign In',
     'Description' => 'Allows users to sign in with their Steam accounts. <strong>Please click Settings, after enabling the plugin, to enable displaying the "Sign in through Steam" button</b>.',
-    'Version' => '14.01.19',
+    'Version' => '16.11.23',
     'RequiredApplications' => array(
         'Vanilla' => '2.1'
     ),
