@@ -1,0 +1,13 @@
+.SteamSignIn .Button {
+	margin-left: 0 !important;
+}
+
+.SteamSignIn #Credits {
+	padding-top: 0.5em;
+	margin: 0 20px;
+	border-top: 1px dotted gray;
+}
+
+.SteamSignIn #Credits span {
+	font-size: 90%;
+}
