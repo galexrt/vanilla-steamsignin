@@ -16,11 +16,13 @@ GPL3: http://www.gnu.org/licenses/gpl-3.0.txt
 $PluginInfo['galexsteamsignin'] = array(
     'Name' => 'Steam Sign In',
     'Description' => 'Allows users to sign in with their Steam accounts. <strong>Please click Settings, after enabling the plugin, to enable displaying the "Sign in through Steam" button</b>.',
-    'Version' => '16.11.23',
+    'Version' => '1.1',
     'RequiredApplications' => array(
         'Vanilla' => '2.1'
     ),
-    'RequiredPlugins' => array('OpenID' => '0.1a'),
+    'RequiredPlugins' => array(
+        'OpenID' => '0.1a',
+    ),
     'RequiredTheme' => false,
     'MobileFriendly' => true,
     'SettingsUrl' => '/dashboard/plugin/galexsteamsignin',
@@ -47,15 +49,15 @@ class galexsteamsigninPlugin extends Gdn_Plugin
      * popup.
      * @return string The URL to use for authentication.
      */
-    protected function BuildAuthorisationURL($Popup = FALSE)
+    protected function BuildAuthorisationURL($Popup = false)
     {
-        $Url      = Url('/entry/openid', TRUE);
+        $Url = Url('/entry/openid', true);
         $UrlParts = explode('?', $Url);
         parse_str(GetValue(1, $UrlParts, ''), $Query);
         
         $Query['url'] = 'https://steamcommunity.com/openid';
         
-        $Path            = '/' . Gdn::Request()->Path();
+        $Path = '/' . Gdn::Request()->Path();
         $Query['Target'] = GetValue('Target', $_GET, $Path);
         
         if ($Popup) {
