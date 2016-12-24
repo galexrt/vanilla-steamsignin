@@ -1,16 +1,18 @@
 <?php
-/* Copyright 2013 Diego Zanella (support@pathtoenlightenment.net)
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License, version 3, as
-published by the Free Software Foundation.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-GPL3: http://www.gnu.org/licenses/gpl-3.0.txt
+/**
+ * Copyright 2013 Diego Zanella (support@pathtoenlightenment.net)
+ * Copyright 2016 Alexander Trost (galexrt@googlemail.com)
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 3, as
+ * published by the Free Software Foundation.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * GPL3: http://www.gnu.org/licenses/gpl-3.0.txt
  * @license GNU GPLv3
-*/
+ */
 
 // Define the plugin:
 $PluginInfo['galexsteamsignin'] = array(
@@ -79,9 +81,9 @@ class galexsteamsigninPlugin extends Gdn_Plugin
      */
     private function GenerateSignInButton($Image)
     {
-        $ButtonTitle    = T('Sign In with Steam');
-        $SigninURL      = $this->BuildAuthorisationURL();
-        $PopupSigninURL = $this->BuildAuthorisationURL(TRUE);
+        $ButtonTitle = T('Sign In with Steam');
+        $SigninURL = $this->BuildAuthorisationURL();
+        $PopupSigninURL = $this->BuildAuthorisationURL(true);
         
         return Anchor(Img($Image, array(
             'alt' => $ButtonTitle
@@ -177,11 +179,6 @@ class galexsteamsigninPlugin extends Gdn_Plugin
         }
         
         if (isset($Sender->Data['Methods'])) {
-            $ImageAlt = T('Sign In with Steam');
-            
-            $SigninURL = $this->BuildAuthorisationURL();
-            $PopupSigninURL = $this->BuildAuthorisationURL(TRUE);
-            
             // Add Steam Sign In method to the Controller
             $Method = array(
                 'Name' => 'Steam',
