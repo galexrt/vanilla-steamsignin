@@ -97,7 +97,7 @@ class galexsteamsigninPlugin extends Gdn_Plugin
      *
      * @param Gdn_Controller Sender Sender Controller.
      */
-    public function PluginController_SteamSignIn_Create($Sender)
+    public function PluginController_GalexSteamSignIn_Create($Sender)
     {
         $Sender->Permission('Garden.Settings.Manage');
         
